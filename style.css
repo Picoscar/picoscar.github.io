@@ -1,0 +1,314 @@
+/* Casa Virtual de Picóscar - Main Stylesheet */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gray-0: #ffffff;
+    --gray-1: #f8f8f8;
+    --gray-2: #e8e8e8;
+    --gray-3: #d0d0d0;
+    --gray-4: #b0b0b0;
+    --gray-5: #808080;
+    --gray-6: #505050;
+    --gray-7: #2a2a2a;
+    --gray-8: #1a1a1a;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, var(--gray-1) 0%, var(--gray-0) 100%);
+    color: var(--gray-8);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* HEADER & NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: transparent;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--gray-8);
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+}
+
+/* HAMBURGER BUTTON */
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 200;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 2.5px;
+    background: var(--gray-8);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* MODAL MENU */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 150;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: var(--gray-0);
+    border: 2px solid var(--gray-3);
+    padding: 3rem;
+    border-radius: 8px;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay.active .modal {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--gray-8);
+    font-weight: normal;
+    letter-spacing: 1px;
+    display: none;
+}
+
+.modal ul {
+    list-style: none;
+    display: none;
+}
+
+.modal li {
+    margin-bottom: 1.5rem;
+}
+
+.modal a {
+    text-decoration: none;
+    color: var(--gray-8);
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.modal a:hover {
+    border-bottom-color: var(--gray-6);
+    color: var(--gray-6);
+}
+
+/* REDES SOCIALES EN MODAL */
+.modal-divider {
+    height: 1px;
+    background: var(--gray-3);
+    margin: 2rem 0;
+    display: none;
+}
+
+.modal-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--gray-2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--gray-6);
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--gray-8);
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover svg {
+    fill: var(--gray-0);
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+/* PUERTA CON PARALLAX */
+.door-container {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    perspective: 1000px;
+    animation: fadeInDoor 1.2s ease-out;
+}
+
+@keyframes fadeInDoor {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.door-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease-out;
+}
+
+/* FOOTER */
+footer {
+    background: var(--gray-8);
+    color: var(--gray-2);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-links .social-icon {
+    background: var(--gray-6);
+    transition: all 0.3s ease;
+}
+
+.social-links .social-icon svg {
+    fill: var(--gray-0);
+}
+
+.social-links .social-icon:hover {
+    background: var(--gray-2);
+}
+
+.social-links .social-icon:hover svg {
+    fill: var(--gray-8);
+}
+
+.footer-text {
+    font-size: 0.85rem;
+    color: var(--gray-4);
+    margin-top: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .modal {
+        width: 85%;
+        padding: 2rem;
+    }
+
+    .door-container {
+        max-width: 90%;
+    }
+
+    .social-links {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+}
