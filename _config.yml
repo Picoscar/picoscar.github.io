@@ -5,8 +5,8 @@ description: >-
   Un espacio virtual para explorar, crear y jugar.
   Audiovisual, textual y más.
 
-baseurl: "picoscar.github.io" # el subpath del sitio, ej. /blog
-url: "" # la URL base del sitio
+baseurl: "" # el subpath del sitio, ej. /blog
+url: "https://picoscar.github.io" # la URL base del sitio
 
 # Author
 author: Picóscar
