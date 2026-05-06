@@ -67,13 +67,44 @@
     <!-- PAGE CONTENT -->
     <main style="height: calc(100vh - 120px); display: flex; flex-direction: column; justify-content: center; ">
         <!-- HERO SECTION -->
+<!-- HERO SECTION -->
 <section class="hero">
     <div class="hero-content">
         <div class="door-container">
-            <img src="https://www.bricomoraleja.com/wp-content/uploads/2022/11/granada.jpg?w=600&amp;h=750&amp;fit=crop" alt="Puerta de Santander, Colombia" class="door-image" id="doorImage" />
+            <img src="/assets/images/door/01 picóscar 85.jpg" alt="Puerta" class="door-image" id="doorImage" />
         </div>
     </div>
 </section>
+
+<script>
+    // Configuración de imágenes de la puerta
+    const doorImages = [
+    
+    
+    ];
+    
+    let currentImageIndex = 0;
+    
+    const doorImage = document.getElementById('doorImage');
+    const doorContainer = document.querySelector('.door-container');
+    
+    if (doorImage && doorContainer) {
+        doorContainer.addEventListener('click', function() {
+            // Avanza al siguiente índice
+            currentImageIndex = (currentImageIndex + 1) % doorImages.length;
+            
+            // Cambia la imagen
+            doorImage.src = doorImages[currentImageIndex];
+            
+            // Efecto visual (opcional)
+            doorImage.style.opacity = '0.5';
+            setTimeout(() => {
+                doorImage.style.opacity = '1';
+            }, 100);
+        });
+    }
+</script>
+
 
     </main>
 
