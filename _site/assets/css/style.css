@@ -224,12 +224,15 @@ header {
 /* PUERTA CON PARALLAX */
 .door-container {
     width: 100%;
-    max-width: 26.67vw;
-    height: 26.67vh;
-    max-height: 200px;
+    max-width: 90vw;
+    height: 33.33vh;
     margin: 0 auto;
     perspective: 1000px;
     animation: fadeInDoor 1.2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-1);
 }
 
 @keyframes fadeInDoor {
@@ -244,9 +247,11 @@ header {
 }
 
 .door-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     border-radius: 4px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     transition: transform 0.1s ease-out;
