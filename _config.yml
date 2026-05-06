@@ -1,0 +1,55 @@
+# Jekyll Configuration for Picóscar Casa Virtual
+
+title: Casa Virtual de Picóscar
+description: >-
+  Un espacio virtual para explorar, crear y jugar.
+  Audiovisual, textual y más.
+
+baseurl: "picoscar.github.io" # el subpath del sitio, ej. /blog
+url: "" # la URL base del sitio
+
+# Author
+author: Picóscar
+email: email@picoscar.com
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Exclude from processing
+exclude:
+  - .jekyll-cache/
+  - .sass-cache/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - README.md
+  - LICENSE
+
+# Collections (para futuros contenidos)
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Social links (para el footer)
+social:
+  instagram: https://instagram.com/picoscar
+  facebook: https://facebook.com/picoscar
+  github: https://github.com/picoscar
+  linkedin: https://linkedin.com/in/picoscar
+  youtube: https://youtube.com/@picoscar
+  email: email@picoscar.com
