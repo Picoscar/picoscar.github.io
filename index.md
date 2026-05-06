@@ -9,7 +9,7 @@ title: Casa Virtual de Picóscar
     <div class="hero-content">
         <div class="door-container">
             <img 
-                src="/assets/images/door/01 picóscar 85.jpg" 
+                src="/assets/images/door/01-1985.jpg" 
                 alt="Puerta" 
                 class="door-image"
                 id="doorImage"
@@ -21,10 +21,13 @@ title: Casa Virtual de Picóscar
 <script>
     // Configuración de imágenes de la puerta
     const doorImages = [
-    {% assign doorFiles = site.static_files | where: "image_path", "/assets/images/door/" | sort: "name" %}
-    {% for file in doorFiles %}
-        '{{ file.path }}'{{ forloop.last | default: ',' }}
-    {% endfor %}
+        '/assets/images/door/01-1985.jpg',
+        '/assets/images/door/02-2009.jpg',
+        '/assets/images/door/03-2011.jpg',
+        '/assets/images/door/04-2013.jpg',
+        '/assets/images/door/05-2016.jpg',
+        '/assets/images/door/06-2018.jpg',
+        '/assets/images/door/07-2025.jpg'
     ];
     
     let currentImageIndex = 0;
