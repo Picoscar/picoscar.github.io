@@ -23,6 +23,9 @@ body {
     background: linear-gradient(135deg, var(--gray-1) 0%, var(--gray-0) 100%);
     color: var(--gray-8);
     overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+    width: 100vw;
     min-height: 100vh;
 }
 
@@ -31,7 +34,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 2rem;
+    padding: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,12 +43,12 @@ header {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 2px;
-    color: var(--gray-8);
+    color: var(--gray-7);
     text-decoration: none;
-    font-family: 'Georgia', serif;
+    font-family: 'Helvetica', sans-serif;
 }
 
 /* HAMBURGER BUTTON */
@@ -203,7 +206,7 @@ header {
 
 /* HERO SECTION */
 .hero {
-    min-height: 100vh;
+    min-height: calc(100vp - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,8 +224,9 @@ header {
 /* PUERTA CON PARALLAX */
 .door-container {
     width: 100%;
-    max-width: 400px;
-    height: 500px;
+    max-width: 26.67vw;
+    height: 26.67vh;
+    max-height: 200px;
     margin: 0 auto;
     perspective: 1000px;
     animation: fadeInDoor 1.2s ease-out;
@@ -250,17 +254,22 @@ header {
 
 /* FOOTER */
 footer {
-    background: var(--gray-8);
+    background: var(--gray-7);
     color: var(--gray-2);
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
-    margin-top: 4rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
 }
@@ -283,7 +292,7 @@ footer {
 }
 
 .footer-text {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--gray-4);
     margin-top: 1rem;
 }
