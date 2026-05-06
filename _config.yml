@@ -6,7 +6,11 @@ description: >-
   Audiovisual, textual y más.
 
 baseurl: "" # el subpath del sitio, ej. /blog
+<<<<<<< HEAD
 url: "https://picoscar.github.io" # la URL base del sitio
+=======
+url: "" # la URL base del sitio
+>>>>>>> ac2ede4b4444791cfb78d384ae76552aee586946
 
 # Author
 author: Picóscar
